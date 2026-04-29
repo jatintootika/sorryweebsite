@@ -1,6 +1,4 @@
-3// ============================================
-// 🎵 AUTOPLAY MUSIC
-// ============================================
+// AUTOPLAY MUSIC
 (function() {
     const audio = document.getElementById('bgMusic');
     if (!audio) return;
@@ -17,9 +15,7 @@
     setTimeout(() => { if (!unmuted) { audio.muted = false; audio.play().catch(() => {}); } }, 2000);
 })();
 
-// ============================================
-// 🎵 MUSIC TOGGLE
-// ============================================
+// MUSIC TOGGLE
 const toggle = document.getElementById('musicToggle');
 const bgm = document.getElementById('bgMusic');
 if (toggle && bgm) {
@@ -32,12 +28,10 @@ if (toggle && bgm) {
     toggle.innerHTML = '<i class="fas fa-music" style="color:#ff6b9d;"></i>';
 }
 
-// ============================================
-// ⌨️ TYPEWRITER EFFECT
-// ============================================
+// TYPEWRITER
 const typedEl = document.getElementById('typed-text');
 if (typedEl) {
-    const texts = ["I'm sorry, Sristi... 💔", "Please forgive me... 🥺", "You're my everything... 💝", "Your Jatin loves you... ❤️", "Maaf karde baby... 🫶🏻"];
+    const texts = ["I'm sorry, Divyanka... 💔", "Please forgive me... 🥺", "You're my everything... 💝", "Your Jatin loves you... ❤️", "Maaf karde baby... 🫶🏻"];
     let i = 0, j = 0, del = false;
     function type() {
         const txt = texts[i];
@@ -50,9 +44,7 @@ if (typedEl) {
     type();
 }
 
-// ============================================
-// 📊 STATS COUNTER ANIMATION
-// ============================================
+// STATS COUNTER
 const stats = document.querySelectorAll('.stat-number[data-target]');
 if (stats.length) {
     let done = false;
@@ -70,9 +62,7 @@ if (stats.length) {
     });
 }
 
-// ============================================
-// 📸 PHOTO UPLOAD SYSTEM
-// ============================================
+// PHOTO UPLOAD SYSTEM
 document.addEventListener('DOMContentLoaded', function() {
     const photoPreview = document.getElementById('photoPreview');
     const photoInput = document.getElementById('photoInput');
@@ -83,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (!photoPreview || !photoInput) return;
     
-    const savedPhoto = localStorage.getItem('sristiMemoryPhoto');
+    const savedPhoto = localStorage.getItem('divyankaMemoryPhoto');
     if (savedPhoto) {
         uploadedPhoto.src = savedPhoto;
         uploadedPhoto.style.display = 'block';
@@ -104,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const reader = new FileReader();
         reader.onload = function(event) {
             const imageData = event.target.result;
-            try { localStorage.setItem('sristiMemoryPhoto', imageData); }
+            try { localStorage.setItem('divyankaMemoryPhoto', imageData); }
             catch(e) { alert('⚠️ Storage full! Chhoti photo try karo.'); return; }
             uploadedPhoto.src = imageData;
             uploadedPhoto.style.display = 'block';
@@ -119,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
     removeBtn.addEventListener('click', function(e) {
         e.stopPropagation();
         if (confirm('Sach mein photo hatani hai? 🥺')) {
-            localStorage.removeItem('sristiMemoryPhoto');
+            localStorage.removeItem('divyankaMemoryPhoto');
             uploadedPhoto.style.display = 'none'; uploadedPhoto.src = '';
             uploadPlaceholder.style.display = 'block';
             removeBtn.style.display = 'none'; uploadBtn.textContent = '📸 Choose Photo';
@@ -144,8 +134,6 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => emoji.remove(), 2000);
         }
     }
-    
-    console.log('✅ Photo Upload System Ready! 📸💝');
 });
 
 const burstStyle = document.createElement('style');
